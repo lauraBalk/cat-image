@@ -1,7 +1,6 @@
 language: php
 php:
   7.0
-  phpunit
 sudo: enabled
 deploy:
 - provider: s3
@@ -27,3 +26,5 @@ deploy:
 before_deploy:
 - mkdir -p dpl_cd_upload
 - mv '' dpl_cd_upload/''
+script:
+  - phpunit --coverage-clover --bootstrap test.php
