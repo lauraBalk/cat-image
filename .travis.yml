@@ -1,6 +1,7 @@
 language: php
 php:
   7.0
+  phpunit
 sudo: enabled
 deploy:
 - provider: s3
