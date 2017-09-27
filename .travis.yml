@@ -1,0 +1,28 @@
+language: php
+rvm:
+  7.0
+sudo: enabled
+deploy:
+- provider: s3
+  access_key_id: AKIAI5LTNUL4IBFI4BJQ
+  secret_access_key: &1
+    secure: Hq1kTHeOxjv/0bHjRCUuriaZrpWRGS++ilpCfjRV7dZGGmcszVelV9xcmkzphwdEGYXVWeU8DZG87yGQYQjfFpNTqwXuInHgTbHCTnuZ9n2u5ZldzqiudIKX6KCqZNBsLndQ9IlYEoqSxeof3OxBhuaqjpsF/xJXnYl+hNC2doQjtc77a0peFmuZpvKnyXuEjrGuYq7+cDxPjx/Ndmau6MUtieTALuFaGlWxOIlmcUcRY6/bo65v2Ab07Af1FG5whMHc1Vf2jHSgOY3UOWbMVE6NIVaXJScDE6PM5QD2CQe+Flar7j2giBXmuRWd9RXZkTkAFPTWJlPSIxuSie35kmeklvfIpHawlb7/poRYvNQua0ahIlHi/2HQ/M+QoAhi4/dVw7+LWqwBNFZ78OqlPhbp1CFPXdf4FGMWrQrn/Cwm3Fp4c2oQyMYrbtpza2mZ2NAoj+B56EECwq1B76vw7UguptuXEybVtKOPRzgQ7bt91tW+BXa0t5brJrx4ia9Dnnfc6xajF12McqmCB6EviFNjsLysXPFXgZ516P2a1bcvYnjVKt3aekTxcE6A2DKuOwcN/DLISER4IufVrDvL2DPy26+GHCfH1gHN2WdbZQtTKPPh58uFFI1C5YsJp8thESNJ/SOdU3qFoeJg4XWMYc/2V7R7SwoCh3Bm++VmofI=
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  on: &2
+    repo: lauraBalk/cat-image
+  bucket: ''
+  region: us-east-2
+- provider: codedeploy
+  access_key_id: AKIAI5LTNUL4IBFI4BJQ
+  secret_access_key: *1
+  bucket: ''
+  key: ''
+  bundle_type: ''
+  application: cat-image
+  deployment_group: deployment-cat-image
+  on: *2
+  region: us-east-2
+before_deploy:
+- mkdir -p dpl_cd_upload
+- mv '' dpl_cd_upload/''
