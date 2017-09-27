@@ -11,7 +11,6 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: lauraBalk/cat-image
-  bucket: ''
   region: us-east-2
 - provider: codedeploy
   access_key_id: AKIAI5LTNUL4IBFI4BJQ
