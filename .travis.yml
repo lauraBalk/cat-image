@@ -11,12 +11,12 @@ deploy:
   skip_cleanup: true
   on: &2
     repo: lauraBalk/cat-image
-  bucket: "S3 Bucket"
+  bucket: aws-bucket-balk
   region: us-east-2
 - provider: codedeploy
   access_key_id: AKIAI5LTNUL4IBFI4BJQ
   secret_access_key: *1
-  bucket: ''
+  bucket: aws-bucket-balk
   key: ''
   bundle_type: zip
   application: cat-image
