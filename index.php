@@ -5,6 +5,7 @@
 		<title>Cutie cat</title>
 	</head>
 	<body>
+		marche fils de pute
 		<?php 
 		$url =  "http://thecatapi.com/api/images/get?api_key=MjI4NDk4&category=hats&results_per_page=1";
 		echo "<img class='cat' src='".$url."'/>";
