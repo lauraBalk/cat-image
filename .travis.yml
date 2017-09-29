@@ -12,6 +12,7 @@ deploy:
   on: &2
     repo: lauraBalk/cat-image
   bucket: aws-bucket-balk
+  upload_dir: latest
   region: us-east-2
 - provider: codedeploy
   access_key_id: AKIAI5LTNUL4IBFI4BJQ
@@ -20,9 +21,9 @@ deploy:
   key: latest/MyApp.zip
   bundle_type: zip
   application: cat-image
+  region: us-east-2
   deployment_group: deployment-cat-image
   on: *2
-  region: us-east-2
 before_deploy:
   - zip MyApp -r *
   - mkdir -p dpl_cd_upload
